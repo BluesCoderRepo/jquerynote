@@ -5,7 +5,17 @@
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
 <script>
-
+$(document).ready(function(){
+  $("select[name=productRiderCoverage]").change(function(){ //select 내 값이 변경되면
+    var selVal = $(this).val();
+    var selPos = $(this).index();
+    $("input[name=chk]").each(function(index, item){ // 선택된 체크박스들을 루트를 돌면서
+        if($(item).is(":checked") && index != selPos){
+            $("select[name=productRiderCoverage]").eq(index).find("option[value="+selVal+"]").prop("selected", true); // 체크박스의 상위에서 select명을 찾아 값을 동일하게 바꾼다.
+		    }
+    });
+  });
+}); 
 </script>
 </head>
 <body>
