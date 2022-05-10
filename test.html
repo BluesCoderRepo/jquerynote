@@ -7,7 +7,7 @@
 <script>
 $("document").ready(function(){
   $("select[name=productRiderCoverage]").change(function(){ //select 내 값이 변경되면
-    $("checkbox[name=chk]:checked").each(function(index, item){ // 선택된 체크박스들을 루트를 돌면서
+    $("input[name=chk]:checked").each(function(index, item){ // 선택된 체크박스들을 루트를 돌면서
         $(item).parent().parent().find("select[name=productRiderCoverage]").val($(this).val()); // 체크박스의 상위에서 select명을 찾아 값을 동일하게 바꾼다.
     });
 });
