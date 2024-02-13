@@ -1,2 +1,2 @@
 # jquerynote
-[ddd](https://www.naver.com)
+[ddd]<https://www.naver.com>
